@@ -9,10 +9,15 @@
 import UIKit
 
 class HypeTableViewController: UITableViewController, UITextFieldDelegate {
+    
+    var refresh: UIRefreshControl = UIRefreshControl()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         loadData()
+        refresh.attributedTitle = NSAttributedString(string: "Pull to see new hype")
+        refresh.addTarget(self, action: #selector(loadData), for: .valueChanged)
+        self.tableView.addSubview(refresh)
     }
     
     @IBAction func addButtonTapped(_ sender: UIBarButtonItem!) {
@@ -21,11 +26,12 @@ class HypeTableViewController: UITableViewController, UITextFieldDelegate {
     
     // Helper Function
     
-    func loadData() {
+    @objc func loadData() {
         HypeController.sharedInstance.fetchHypes { (success) in
             if success {
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
+                    self.refresh.endRefreshing()
                 }
             }
         }
