@@ -13,6 +13,8 @@
 		85F40D3322D4F26200E71C7E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85F40D3122D4F26200E71C7E /* LaunchScreen.storyboard */; };
 		85F40D3F22D4F7B800E71C7E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 85F40D3E22D4F7B700E71C7E /* Default-568h@2x.png */; };
 		85F40D4122D4F7DA00E71C7E /* HypeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F40D4022D4F7DA00E71C7E /* HypeTableViewController.swift */; };
+		85F40D4522D4F9B200E71C7E /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85F40D4422D4F9B200E71C7E /* CloudKit.framework */; };
+		85F40D4722D4FA0F00E71C7E /* Hype.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F40D4622D4FA0F00E71C7E /* Hype.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,9 @@
 		85F40D3422D4F26200E71C7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		85F40D3E22D4F7B700E71C7E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		85F40D4022D4F7DA00E71C7E /* HypeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HypeTableViewController.swift; sourceTree = "<group>"; };
+		85F40D4222D4F9AD00E71C7E /* HypeiOS27.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HypeiOS27.entitlements; sourceTree = "<group>"; };
+		85F40D4422D4F9B200E71C7E /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		85F40D4622D4FA0F00E71C7E /* Hype.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hype.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85F40D4522D4F9B200E71C7E /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,6 +49,7 @@
 				85F40D3E22D4F7B700E71C7E /* Default-568h@2x.png */,
 				85F40D2722D4F26000E71C7E /* HypeiOS27 */,
 				85F40D2622D4F26000E71C7E /* Products */,
+				85F40D4322D4F9B200E71C7E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,6 +64,8 @@
 		85F40D2722D4F26000E71C7E /* HypeiOS27 */ = {
 			isa = PBXGroup;
 			children = (
+				85F40D4222D4F9AD00E71C7E /* HypeiOS27.entitlements */,
+				85F40D4822D4FA1B00E71C7E /* Models */,
 				85F40D3C22D4F70500E71C7E /* Views */,
 				85F40D3B22D4F6FC00E71C7E /* Controllers */,
 				85F40D3D22D4F70C00E71C7E /* Resources */,
@@ -99,6 +108,22 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		85F40D4322D4F9B200E71C7E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				85F40D4422D4F9B200E71C7E /* CloudKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		85F40D4822D4FA1B00E71C7E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				85F40D4622D4FA0F00E71C7E /* Hype.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -131,6 +156,14 @@
 				TargetAttributes = {
 					85F40D2422D4F26000E71C7E = {
 						CreatedOnToolsVersion = 10.2.1;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -173,6 +206,7 @@
 			files = (
 				85F40D2922D4F26000E71C7E /* AppDelegate.swift in Sources */,
 				85F40D4122D4F7DA00E71C7E /* HypeTableViewController.swift in Sources */,
+				85F40D4722D4FA0F00E71C7E /* Hype.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,6 +352,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = HypeiOS27/HypeiOS27.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YY8J3FPYX8;
 				INFOPLIST_FILE = "$(SRCROOT)/HypeiOS27/Resources/Info.plist";
@@ -336,6 +371,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = HypeiOS27/HypeiOS27.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YY8J3FPYX8;
 				INFOPLIST_FILE = "$(SRCROOT)/HypeiOS27/Resources/Info.plist";
