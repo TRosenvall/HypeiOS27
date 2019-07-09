@@ -54,14 +54,46 @@
 		85F40D2722D4F26000E71C7E /* HypeiOS27 */ = {
 			isa = PBXGroup;
 			children = (
-				85F40D2822D4F26000E71C7E /* AppDelegate.swift */,
+				85F40D3C22D4F70500E71C7E /* Views */,
+				85F40D3B22D4F6FC00E71C7E /* Controllers */,
+				85F40D3D22D4F70C00E71C7E /* Resources */,
+			);
+			path = HypeiOS27;
+			sourceTree = "<group>";
+		};
+		85F40D3A22D4F6F200E71C7E /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
 				85F40D2A22D4F26000E71C7E /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		85F40D3B22D4F6FC00E71C7E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				85F40D3A22D4F6F200E71C7E /* ViewControllers */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		85F40D3C22D4F70500E71C7E /* Views */ = {
+			isa = PBXGroup;
+			children = (
 				85F40D2C22D4F26000E71C7E /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		85F40D3D22D4F70C00E71C7E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				85F40D2822D4F26000E71C7E /* AppDelegate.swift */,
 				85F40D2F22D4F26200E71C7E /* Assets.xcassets */,
 				85F40D3122D4F26200E71C7E /* LaunchScreen.storyboard */,
 				85F40D3422D4F26200E71C7E /* Info.plist */,
 			);
-			path = HypeiOS27;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
