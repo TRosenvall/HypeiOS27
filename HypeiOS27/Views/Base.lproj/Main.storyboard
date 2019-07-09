@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Hype Table View Controller-->
         <scene sceneID="Y4Q-Sm-pdH">
             <objects>
-                <tableViewController id="ilp-Hv-5IP" sceneMemberID="viewController">
+                <tableViewController id="ilp-Hv-5IP" customClass="HypeTableViewController" customModule="HypeiOS27" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="bVY-d7-ffK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -49,7 +49,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="IFL-xh-43k">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="jn1-ka-dfM"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="jn1-ka-dfM">
+                            <connections>
+                                <action selector="addButtonTapped:" destination="ilp-Hv-5IP" id="JY3-3t-8mf"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F9s-bR-9nd" userLabel="First Responder" sceneMemberID="firstResponder"/>

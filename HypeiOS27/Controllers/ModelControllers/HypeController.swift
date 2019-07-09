@@ -15,6 +15,8 @@ class HypeController {
     let publicDB = CKContainer.default().publicCloudDatabase
     // Source of truth
     var hypes: [Hype] = []
+    // Singleton
+    static let sharedInstance = HypeController()
     
     // CRUD
     // Save
@@ -25,14 +27,27 @@ class HypeController {
             if let error = error {
                 print("Error in \(#function) :  \(error.localizedDescription) /n---/n \(error)")
             }
-            self.hypes.append(hype)
+            self.hypes.insert(hype, at: 0)
             completion(true)
         }
     }
     
     // Fetch
-    func fetchHypes(comption: @escaping (Bool) -> Void) {
-        
+    func fetchHypes(completion: @escaping (Bool) -> Void) {
+        let predicate = NSPredicate(value: true)
+        let query = CKQuery(recordType: HypeConstants.recordTypeKey, predicate: predicate)
+        query.sortDescriptors = [NSSortDescriptor(key: HypeConstants.recordtimestampKey, ascending: false)]
+        publicDB.perform(query, inZoneWith: nil) { (records, error) in
+            if let error = error {
+                print("Error in \(#function) :  \(error.localizedDescription) /n---/n \(error)")
+                completion(false)
+                return
+            } else if let records = records {
+                let hypes = records.compactMap({Hype(ckRecord: $0)})
+                self.hypes = hypes
+                completion(true)
+            }
+        }
     }
     
     // Subscription
